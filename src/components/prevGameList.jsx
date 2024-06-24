@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { ConfigContext } from '../context/config'
 
 function PrevGameList() {
   const [ show, setShow ] = useState(false)
+  
 
   return (
     <>
@@ -26,6 +28,8 @@ function Button(props) {
 }
 
 function List(props) {
+  const { config } = useContext(ConfigContext)
+
   return (
     <div className={'absolute top-0 left-0 z-10 h-screen border bg-gray-200 transition-all overflow-hidden w-56 ' +
       (props.show ? 'translate-x-0' : '-translate-x-56')
@@ -39,6 +43,10 @@ function List(props) {
           </svg>
         </button>
       </div>
+      {/* Lists */}
+      {
+        JSON.stringify(config.prevGameResults)
+      }
     </div>
   )
 }
