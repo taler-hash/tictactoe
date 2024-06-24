@@ -10,14 +10,18 @@ import Navbar from './components/Navbar'
 function App() {
   const [ config, setConfig ] = useState({
     started: false,
+    startGame: false,
     player1: {
       tiles: [],
-      name: null,
+      username: null,
+      mark: null
     },
     player2: {
       tiles: [],
-      name: null,
+      username: null,
+      mark: null
     },
+    turn: null,
     winner: null,
     showPrevGames: false
   })
@@ -26,7 +30,7 @@ function App() {
     if(!config.started) {
       return <StartNewGame />
     } else {
-      if(config.username) {
+      if(!config.startGame) {
         return <UserName/>
       } else {
         return <TicTacToe />
@@ -40,7 +44,6 @@ function App() {
         <Navbar />
         <div className='relative h-[calc(100%-4.5rem)] grid place-items-center'>
           <div className="">
-            
             {isStarted()}
           </div>
         </div>    
