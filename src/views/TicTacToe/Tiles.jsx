@@ -93,7 +93,6 @@ function Tiles() {
           ]
       }))
     }
-
   }
 
   function renderTiles() {
@@ -113,7 +112,6 @@ function Tiles() {
       </>
     )
   }
-
 
   return (
     <div className="w-full grid grid-cols-3">

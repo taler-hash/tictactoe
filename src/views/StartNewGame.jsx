@@ -1,8 +1,6 @@
 import { useContext } from "react"
 import { ConfigContext } from "../context/config"
 
-import PrevGameList from "../components/prevMatchList"
-
 function StartNewGame() {
   const { setConfig } = useContext(ConfigContext)
 

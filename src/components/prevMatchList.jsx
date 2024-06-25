@@ -1,9 +1,9 @@
 import { useState, useContext } from 'react'
 import { ConfigContext } from '../context/config'
+import PropTypes from 'prop-types';
 
 function PrevMatchList() {
   const [ show, setShow ] = useState(false)
-  
 
   return (
     <>
@@ -44,8 +44,6 @@ function renderList() {
 }
 
 function List(props) {
-  
-
   return (
     <div className={'absolute top-0 left-0 z-10 h-screen border bg-gray-200/30 transition-all overflow-hidden w-56 backdrop-blur-md ' +
       (props.show ? 'translate-x-0' : '-translate-x-56')

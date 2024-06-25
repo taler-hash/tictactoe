@@ -7,7 +7,7 @@ import UserName from './views/UserName'
 import TicTacToe from './views/TicTacToe'
 import Navbar from './components/Navbar'
 import Winner from './views/Winner'
-import Bg from './assets/marksbg.jpg'
+import Footer from './components/footer'
 
 function App() {
   const [ config, setConfig ] = useState({})
@@ -39,7 +39,6 @@ function App() {
     }
     
   }
-  // Tiwasa ni naay error kung mag render sa randomized ang username component ang naay error
 
   function initGame(type) {
     const player = randomizedPlayerTurn()
@@ -97,7 +96,6 @@ function App() {
     return `player${playerNumber}`
   }
 
-
   useEffect(() => {
     initConfig('new')
   },[])
@@ -125,6 +123,7 @@ function App() {
           <div className="">
             {isStarted()}
           </div>
+          <Footer />
         </div>    
       </ConfigContext.Provider>
     </main>

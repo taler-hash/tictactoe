@@ -28,13 +28,12 @@ function Winner() {
   return(
     <div className='flex flex-col items-center'>
       {isDraw()}
-      <div className={'flex items-center space-x-2 transition-all duration-1000 pt-2 ' + (showFooter ? 'scale-100' : 'scale-0')}>
+      <div className={"flex items-center space-x-2 transition-all duration-1000 pt-2 " + (showFooter ? "scale-100" : "scale-0")}>
             <button onClick={() => initGame('continue')} className='btn-sm-success'>Continue</button>
             <button onClick={() => initConfig('stop')} className='btn-sm-danger'>Stop</button>
         </div>
     </div>
   )
 }
-
 
 export default Winner
