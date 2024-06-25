@@ -3,7 +3,7 @@ import { ConfigContext } from '../context/config';
 import { useContext, useEffect, useState } from 'react';
 function Winner() {
   const [showFooter, setShowFooter ] = useState(false)
-  const { config, initConfig } = useContext(ConfigContext)
+  const { config, initConfig, initGame } = useContext(ConfigContext)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -29,7 +29,7 @@ function Winner() {
     <div className='flex flex-col items-center'>
       {isDraw()}
       <div className={'flex items-center space-x-2 transition-all duration-1000 pt-2 ' + (showFooter ? 'scale-100' : 'scale-0')}>
-            <button className='btn-sm-success'>Continue</button>
+            <button onClick={() => initGame('continue')} className='btn-sm-success'>Continue</button>
             <button onClick={() => initConfig('stop')} className='btn-sm-danger'>Stop</button>
         </div>
     </div>

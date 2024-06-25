@@ -1,4 +1,4 @@
-import PrevGameList from "./prevGameList"
+import PrevGameList from "./prevMatchList"
 
 function Navbar() {
   return (

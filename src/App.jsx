@@ -7,6 +7,7 @@ import UserName from './views/UserName'
 import TicTacToe from './views/TicTacToe'
 import Navbar from './components/Navbar'
 import Winner from './views/Winner'
+import Bg from './assets/marksbg.jpg'
 
 function App() {
   const [ config, setConfig ] = useState({})
@@ -32,31 +33,18 @@ function App() {
 
     if(type === 'new') {
       setConfig(_config)
-    } else if(type === "stop") {
+    } else {
       _config.prevGameResults = config.prevGameResults
       setConfig(_config)
-    } else {
-      _config = {
-        ..._config,
-        started: true,
-        startGame:true,
-        player1: {
-          ..._config.player1,
-          username: config.player1?.username
-        },
-        player2: {
-          ..._config.player2,
-          username: config.player2?.username
-        },
-        prevGameResults: config.prevGameResults
-
-      }
     }
+    
   }
+  // Tiwasa ni naay error kung mag render sa randomized ang username component ang naay error
 
   function initGame(type) {
+    const player = randomizedPlayerTurn()
+
     if(type === 'start') {
-      const player = randomizedPlayerTurn()
       setConfig((prev) => {
         return {
           ...prev,  
@@ -64,10 +52,31 @@ function App() {
           turn: player,
         }
       })
-    randomizedMarks()
+    
     } else {
-
+      setConfig(prev => {
+        return {
+          ...prev,
+          turn:player,
+          winner: null,
+          started: true,
+        startGame:true,
+        player1: {
+          ...prev.player1,
+          username: config.player1?.username,
+          tiles: []
+        },
+        player2: {
+          ...prev.player2,
+          username: config.player2?.username,
+          tiles: []
+        },
+        prevGameResults: config.prevGameResults
+        }
+      })
     }
+
+    randomizedMarks()
   }
 
   function randomizedMarks() {
@@ -109,7 +118,7 @@ function App() {
   }
 
   return (
-    <main className='w-full h-screen'>
+    <main className={'w-full h-screen ' + `bg-[url('./assets/marksbg-5.png')]`} >
       <ConfigContext.Provider value={{config, setConfig, initConfig, initGame}}>
         <Navbar />
         <div className='relative h-[calc(100%-4.5rem)] grid place-items-center'>

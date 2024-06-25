@@ -5,7 +5,7 @@ import UserTurn from "./UserTurn"
 function TicTacToe() {
   return (
     <>
-      <div>
+      <div className='w-80 grid place-items-center'>
           <UserTurn />
           <Tiles />
       </div>

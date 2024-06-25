@@ -83,11 +83,11 @@ function Tiles() {
             {
               player1: {
                 username: prev.player1.username,
-                className: prev.winner === 'player1' ? 'text-green-500' : 'text-red-500'
+                className: prev.winner === 'player1' ? 'text-green-500' : 'text-gray-500'
               },
               player2: {
                 username: prev.player2.username,
-                className: prev.winner === 'player2' ? 'text-green-500' : 'text-red-500'
+                className: prev.winner === 'player2' ? 'text-green-500' : 'text-gray-500'
               }
             }
           ]
@@ -105,7 +105,7 @@ function Tiles() {
               disabled={tile?.mark}
               key={tile.tile} 
               onClick={() => handleClickTiles(tile.tile)}
-              className="w-32 h-32 border border-gray-400 disabled:cursor-not-allowed disabled:bg-gray-200 flex items-center">
+              className="w-28 h-28 border border-gray-400 disabled:cursor-not-allowed disabled:bg-gray-200 flex items-center bg-white">
                 <MarkIcon mark={tile.mark} size={20} />
               </button>
           })
@@ -116,7 +116,7 @@ function Tiles() {
 
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="w-full grid grid-cols-3">
       {renderTiles()}
     </div>
   )
