@@ -1,4 +1,5 @@
 # Tic Tac Toe Game
+- Using React.JS, Tailwind CSS, and Vercel
 
 Link Preview: [Tic Tac Toe](https://tictactoejurietylierpedrogas-jftdvbdng.vercel.app/)
 
