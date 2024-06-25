@@ -1,8 +1,12 @@
-# React + Vite
+# Tic Tac Toe Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Link Preview: [Tic Tac Toe](https://tictactoejurietylierpedrogas-jftdvbdng.vercel.app/)
 
-Currently, two official plugins are available:
+## Installation
+- first clone the project
+- Next run `npm install`
+- after installing you can run the application `npm run dev`
+- and then access the app [local](http://localhost:5173)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Made by Jurie Tylier Pedrogas
