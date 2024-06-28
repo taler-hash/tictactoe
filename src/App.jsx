@@ -1,6 +1,7 @@
-import { useEffect, useState, lazy } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import './App.css'
 import { ConfigContext } from './context/config'
+import LoadingScreen from './components/loadingScreen'
 
 const StartNewGame = lazy(() => import('./views/StartNewGame')) 
 const UserName = lazy(() => import('./views/UserName')) 
@@ -118,13 +119,15 @@ function App() {
   return (
     <main className={'w-full h-screen ' + `bg-[url('./assets/marksbg-5.png')]`} >
       <ConfigContext.Provider value={{config, setConfig, initConfig, initGame}}>
-        <Navbar />
-        <div className='relative h-[calc(100%-4.5rem)] grid place-items-center'>
-          <div className="">
-            {isStarted()}
-          </div>
-          <Footer />
-        </div>    
+        <Suspense fallback={<LoadingScreen />}>
+          <Navbar />
+          <div className='relative h-[calc(100%-4.5rem)] grid place-items-center'>
+            <div className="">
+              {isStarted()}
+            </div>
+            <Footer />
+          </div>    
+        </Suspense>
       </ConfigContext.Provider>
     </main>
   )
