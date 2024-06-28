@@ -119,15 +119,16 @@ function App() {
   return (
     <main className={'w-full h-screen ' + `bg-[url('./assets/marksbg-5.png')]`} >
       <ConfigContext.Provider value={{config, setConfig, initConfig, initGame}}>
-        <Suspense fallback={<LoadingScreen />}>
+        
           <Navbar />
           <div className='relative h-[calc(100%-4.5rem)] grid place-items-center'>
             <div className="">
-              {isStarted()}
+              <Suspense fallback={<LoadingScreen />}>
+                {isStarted()}
+              </Suspense> 
             </div>
             <Footer />
           </div>    
-        </Suspense>
       </ConfigContext.Provider>
     </main>
   )
