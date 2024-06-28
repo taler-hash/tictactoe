@@ -1,13 +1,13 @@
-import { useEffect, useState} from 'react'
+import { useEffect, useState, lazy } from 'react'
 import './App.css'
 import { ConfigContext } from './context/config'
 
-import StartNewGame from './views/StartNewGame'
-import UserName from './views/UserName'
-import TicTacToe from './views/TicTacToe'
-import Navbar from './components/Navbar'
-import Winner from './views/Winner'
-import Footer from './components/footer'
+const StartNewGame = lazy(() => import('./views/StartNewGame')) 
+const UserName = lazy(() => import('./views/UserName')) 
+const TicTacToe = lazy(() => import('./views/TicTacToe')) 
+const Navbar = lazy(() => import('./components/Navbar')) 
+const Winner = lazy(() => import('./views/Winner')) 
+const Footer = lazy(() => import('./components/footer')) 
 
 function App() {
   const [ config, setConfig ] = useState({})
